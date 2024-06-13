@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 
 # Memuat model, scaler, dan label encoder dari file
-model = pickle.load(open('diagnosis_penyakit.pkl','rb'))
+model_diagnosis = pickle.load(open('diagnosis_penyakit.pkl','rb'))
 scaler = pickle.load(open('scaler.pkl','rb'))
 label_encoder = pickle.load(open('label_encoder.pkl','rb'))
 
@@ -16,7 +16,7 @@ def predict_disease(symptoms):
     input_data_scaled = scaler.transform(input_data)
     
     # Memprediksi penyakit
-    prediction = model.predict(input_data_scaled)
+    prediction = model_diagnosis.predict(input_data_scaled)
     return label_encoder.inverse_transform(prediction)[0]
 
 # Title
