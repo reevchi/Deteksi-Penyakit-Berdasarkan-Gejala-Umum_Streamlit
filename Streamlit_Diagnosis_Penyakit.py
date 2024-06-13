@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 
 # Memuat model, scaler, dan label encoder dari file
-model = pickle.load(open('diagnosis_penyakit.sav','wb'))
+model = pickle.load(open('diagnosis_penyakit.sav','rb'))
 scaler = pickle.load(open('scaler.pkl','rb'))
 label_encoder = pickle.load(open('label_encoder.pkl','rb'))
 
