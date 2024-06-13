@@ -1,5 +1,4 @@
 pandas==2.2.2
-pip==24.0
 streamlit
+scikit-learn
 pickle
-sklearns
