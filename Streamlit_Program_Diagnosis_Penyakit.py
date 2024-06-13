@@ -3,10 +3,13 @@ import pandas as pd
 import pickle
 
 # Memuat model, scaler, dan label encoder dari file
-model_diagnosis = pickle.load(open('diagnosis_penyakit.pkl','rb'))
+def load_model():
+    with open('diagnosis_penyakit.pkl', 'rb') as model_file:
+        model = pickle.load(model_file)
+
 scaler = pickle.load(open('scaler.pkl','rb'))
 label_encoder = pickle.load(open('label_encoder.pkl','rb'))
-
+model = load_model()
 # Fungsi untuk memprediksi penyakit berdasarkan gejala
 def predict_disease(symptoms):
     # Membuat dataframe dari gejala
